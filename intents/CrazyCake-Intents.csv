@@ -1,0 +1,25 @@
+query,topIntent
+forget my order,Cancel Cake
+cake is gross,Cancel Cake
+no cake for me,Cancel Cake
+Don't give me cake anymore,Cancel Cake
+I don't like cake,Cancel Cake
+cancel my order,Cancel Cake
+"I changed my mind, no cake",Cancel Cake
+I don't want cake anymore,Cancel Cake
+Pls don't send cake,Cancel Cake
+I hate cake,Cancel Cake
+no cake,Cancel Cake
+Cake please,Order Cake
+Can I order cake,Order Cake
+I want a large cake,Order Cake
+I like to order a cake,Order Cake
+I like cake,Order Cake
+give me cake,Order Cake
+buy cake,Order Cake
+purchase cake,Order Cake
+I fancy a cake,Order Cake
+"I could really go for a cake right now ",Order Cake
+Gimme cake pls,Order Cake
+order cake,Order Cake
+Please order me a cake,Order Cake
