@@ -1,0 +1,25 @@
+{
+  "name" : "CakeSize",
+  "description" : "CakeSize",
+  "type" : "ENUMVALUES",
+  "enumValues" : [ {
+    "canonicalName" : "small",
+    "synonyms" : [ "sm", "s", "smol", "sml" ]
+  }, {
+    "canonicalName" : "medium",
+    "synonyms" : [ "med", "normal", "norm", "m" ]
+  }, {
+    "canonicalName" : "large",
+    "synonyms" : [ "lorg", "larg", "xl", "l", "lrge" ]
+  } ],
+  "namedEntityRuleParams" : [ ],
+  "multiValue" : false,
+  "fuzzyMatch" : false,
+  "promptForDisambiguation" : true,
+  "botPrompts" : [ {
+    "text" : "Please enter CakeSize",
+    "sequenceNr" : null
+  } ],
+  "validationRules" : [ ],
+  "compositeBagItems" : [ ]
+}

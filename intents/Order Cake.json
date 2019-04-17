@@ -1,0 +1,58 @@
+{
+  "name" : "Order Cake",
+  "description" : "order a cake ",
+  "type" : "NLPIntent",
+  "intentParameters" : [ {
+    "name" : "CakeSizeCakeSize",
+    "required" : true,
+    "entity" : "CakeSize"
+  }, {
+    "name" : "CakeTypeCakeType",
+    "required" : true,
+    "entity" : "CakeType"
+  }, {
+    "name" : "Confirm",
+    "required" : true,
+    "entity" : "Confirm"
+  } ],
+  "exampleData" : [ {
+    "sentence" : "Cake please",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Can I order cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I want a large cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I like to order a cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I like cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "give me cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "buy cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "purchase cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I fancy a cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I could really go for a cake right now ",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Gimme cake pls",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "order cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Please order me a cake",
+    "exampleEntities" : [ ]
+  } ]
+}

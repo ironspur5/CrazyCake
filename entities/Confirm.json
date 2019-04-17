@@ -1,0 +1,21 @@
+{
+  "name" : "Confirm",
+  "type" : "ENUMVALUES",
+  "enumValues" : [ {
+    "canonicalName" : "Yes",
+    "synonyms" : [ "ya", "ye", "y" ]
+  }, {
+    "canonicalName" : "No",
+    "synonyms" : [ "n", "nah", "nope" ]
+  } ],
+  "namedEntityRuleParams" : [ ],
+  "multiValue" : false,
+  "fuzzyMatch" : false,
+  "promptForDisambiguation" : true,
+  "botPrompts" : [ {
+    "text" : "Please enter Confirm",
+    "sequenceNr" : null
+  } ],
+  "validationRules" : [ ],
+  "compositeBagItems" : [ ]
+}

@@ -1,0 +1,156 @@
+metadata:
+  platformVersion: 1.0
+main: true
+name: CrazyCake
+
+#context: Define the variables which will used throughout the dialog flow here.
+context:
+  variables:
+
+    iResult: "nlpresult"
+    CakeType: "CakeType"
+    CakeSize: "CakeSize"
+    Confirm: "Confirm"
+    Menu: "string"
+    cardsRangeStart: "int"
+
+states:
+
+  InitializeMenu:
+    component: "System.SetVariable"
+    properties:
+      variable: "Menu"
+      value:
+      - name: "CHOCOLATE"
+        description: "$10"
+        image: "https://cdn.pixabay.com/photo/2014/10/13/16/11/cake-486874_1280.jpg"
+      - name: "VANILLA"
+        description: "$10"
+        image: "https://media.istockphoto.com/photos/slice-of-vanilla-cake-on-a-white-background-picture-id92077500"
+      - name: "RED VELVET"
+        description: "$12"
+        image: "https://previews.123rf.com/images/siraphol/siraphol1407/siraphol140701839/29636289-red-velvet-cake-isolated-on-white-background.jpg"
+      - name: "ANGEL FOOD"
+        description: "$14"
+        image: "https://sweets.seriouseats.com/images/2014/03/shutterstock_74807158.jpg"
+      - name: "CARROT"
+        description: "$14"
+        image: "https://previews.123rf.com/images/siraphol/siraphol1503/siraphol150300208/37045195-carrot-cakes-isolated-on-white-background.jpg"
+    transitions: {}
+    
+  setCardsRangeStart:
+    component: "System.SetVariable"
+    properties:
+      variable: "cardsRangeStart"
+      value: 0          
+
+  welcome:
+    component: "System.Output"
+    properties:
+      text: "Welcome to CrazyCake! What would you like today?"
+      keepTurn: false
+      translate:
+      
+  intent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+    transitions:
+      actions:
+        Order Cake: "startOrder"
+        Cancel Cake: "cancelOrder"
+        See Menu: "seeMenu"
+        unresolvedIntent: "unresolved"
+        
+  unresolved:
+    component: "System.Output"
+    properties:
+      text: "Sorry, I did not understand the request. Please try again."
+      keepTurn: false
+    transitions:
+      next: "intent"
+      
+  seeMenu:
+    component: "System.Output"
+    properties:
+      text: "Here's our menu: \n\nhttps://pironspur.wixsite.com/crazycake/flavors. \n\nWhen you're done, tell me what you would like!"
+      keepTurn: false
+    transitions:
+      next: "intent"
+      
+  cancelOrder:
+    component: "System.Output"
+    properties:
+      text: "Ok I won't send you cake :("
+    transitions:
+      return: "done"
+      
+  startOrder:
+    component: "System.CommonResponse"
+    properties:
+      variable: "CakeType"
+      nlpResultVariable: "iResult"  
+      metadata:
+        responseItems:
+        - type: "text" 
+          text: "Here are all of our delicious cakes:"
+        - type: "cards"
+          cardLayout: "horizontal"
+          
+          cards:
+          - title: "${Menu.name}"
+            description: "${Menu.description}"
+            imageUrl: "${Menu.image}"
+            iteratorVariable: "Menu"
+            rangeStart: "${cardsRangeStart}"
+            rangeSize: "5"
+            actions:
+            - label: "Order"
+              type: "postback"
+              payload:
+                action: "order"
+                variables:
+                  CakeType: "${Menu.name}"
+      processUserMessage: true
+    transitions:
+      actions:
+        order: "askSize"
+        more: "startOrder"
+        textReceived: "intent"   
+         
+  askSize:
+    component: "System.List"
+    properties: 
+      prompt: "What size cake do you want?"
+      options: "${CakeSize.type.enumValues}"      
+      variable: "CakeSize"
+      nlpResultVariable: "iResult"
+    transitions:
+      next: "confirmOrder"
+      
+  confirmOrder:
+    component: "System.List"
+    properties: 
+      prompt: "Please confirm that you want a ${CakeSize.value} ${CakeType.value} cake."
+      options: "Yes, No"
+      variable: "Confirm"
+    transitions:
+      next: "evalConfirm"
+      
+  evalConfirm:
+    component: "System.ConditionEquals"
+    properties:
+      variable: "Confirm"
+      value: "Yes"
+    transitions:
+      actions:
+        equal: "printOrder"
+        notequal: "cancelOrder"
+      
+  printOrder:
+    component: "System.Output"
+    properties:
+      text: "Great! I'll send you a ${CakeSize.value} ${CakeType.value} cake!"
+      keepTurn: false
+    transitions:
+      return: "done"

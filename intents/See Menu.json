@@ -1,0 +1,49 @@
+{
+  "name" : "See Menu",
+  "description" : "See Menu",
+  "type" : "NLPIntent",
+  "intentParameters" : [ ],
+  "exampleData" : [ {
+    "sentence" : "what do you guys have?",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "what flavors do you have",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "i want to see a menu",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "flavors",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "types",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "what kinds of cakes do you have",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "menu",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "can i see a menu?",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "what do you offer",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "what are your offerings",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "what types of cakes do you have",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "what type of cake do you sell",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "menu please",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "men",
+    "exampleEntities" : [ ]
+  } ]
+}

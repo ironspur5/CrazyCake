@@ -1,0 +1,31 @@
+{
+  "name" : "CakeType",
+  "description" : "CakeType",
+  "type" : "ENUMVALUES",
+  "enumValues" : [ {
+    "canonicalName" : "chocolate",
+    "synonyms" : [ "choco", "choc" ]
+  }, {
+    "canonicalName" : "vanilla",
+    "synonyms" : [ "vanil", "vanilly" ]
+  }, {
+    "canonicalName" : "red velvet",
+    "synonyms" : null
+  }, {
+    "canonicalName" : "angel food",
+    "synonyms" : [ "angel's food" ]
+  }, {
+    "canonicalName" : "carrot",
+    "synonyms" : null
+  } ],
+  "namedEntityRuleParams" : [ ],
+  "multiValue" : false,
+  "fuzzyMatch" : false,
+  "promptForDisambiguation" : true,
+  "botPrompts" : [ {
+    "text" : "Please enter CakeType",
+    "sequenceNr" : null
+  } ],
+  "validationRules" : [ ],
+  "compositeBagItems" : [ ]
+}

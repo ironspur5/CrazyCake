@@ -1,0 +1,40 @@
+{
+  "name" : "Cancel Cake",
+  "description" : "Cancel Cake",
+  "type" : "NLPIntent",
+  "intentParameters" : [ ],
+  "exampleData" : [ {
+    "sentence" : "forget my order",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "cake is gross",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "no cake for me",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Don't give me cake anymore",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I don't like cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "cancel my order",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I changed my mind, no cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I don't want cake anymore",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "Pls don't send cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "I hate cake",
+    "exampleEntities" : [ ]
+  }, {
+    "sentence" : "no cake",
+    "exampleEntities" : [ ]
+  } ]
+}
